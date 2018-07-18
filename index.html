@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Marble Effect using HTML Canvas</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .slidecontainer {
+      position: absolute;
+      width: 15%;
+      height: 15%;
+      top: 20px;
+      right: 20px;
+      z-index: 10;
+      background-color: rgba(0, 0, 0, 0.5);
+      border: 1px dotted #fff;
+      padding: 10px 5px;
+    }
+
+    .label {
+      color: white;
+      position: absolute;
+    }
+
+    .slider {
+      margin-top: 30px;
+      -webkit-appearance: none;
+      width: 90%;
+      height: 8px;
+      border-radius: 4px;
+      background: #d3d3d3;
+      outline: none;
+      opacity: 0.7;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+      text-align: center;
+    }
+
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #4CAF50;
+      cursor: pointer;
+    }
+
+    .slider::-moz-range-thumb {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: #4CAF50;
+      cursor: pointer;
+    }
+    #currentValue{
+      text-align: center;
+      color: #fff;
+      font-size: 18px;
+      padding: 8px;
+      
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="can"></canvas>
+  <form>
+    <div class="slidecontainer">
+      <label class="label" for="myRange">No of Balls:</label>
+      <input type="range" min="1" max="100" value="5" class="slider" id="myRange">
+      <div id="currentValue"></div>
+    </div>
+  </form>
+  <script type="module" src="./script.js"></script>
+</body>
+
+</html>
